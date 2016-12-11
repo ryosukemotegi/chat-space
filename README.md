@@ -10,6 +10,7 @@
 
 ### relation
 ##### belongs_to:user
+##### belongs_to:group
 
 ## users
 |column|Type|Null|Key|
@@ -22,8 +23,8 @@
 
 ### relation
 ##### has_many:messages
-##### belongs_to:groups
-
+##### belongs_to:group
+##### has_many:groups
 
 ## groups
 |column|Type|Null|Key|
@@ -33,3 +34,4 @@
 
 ### relation
 ##### has_many:users
+##### belongs_to:user
