@@ -1,0 +1,37 @@
+%p.notice チャットグループが作成されました。
+.chat.clearfix
+  .chat-side
+    .chat-user.clearfix
+      %h5 ユーザー名
+      .chat-user__actions
+        %a.chat-user__action
+          %i.icon.fa.fa-pencil-square-o
+        %a.chat-user__action
+          %i.icon.fa.fa-cog
+    %ul.chat-groups
+      %li.chat-group
+        %p.chat-group__name グループ名
+        %p.chat-group__message こんにちは
+  .chat-main
+    .chat-header.clearfix
+      .chat-header--left
+        %h2 グループ1
+        %p.chat-header__users<>
+          Members:
+          %span.chat-header__user メンバー１
+      .chat-header--right
+        %a.chat-header__edit-btn Edit
+    .chat-body
+      %ul.chat-messages
+        %li.chat-message
+          .chat-mssage__header.clearfix
+            %p.chat-message__name ユーザー1
+            %p.chat-message__time 2016/12/17
+          %p.chat-message__body Hello Work
+    .chat-footer
+      %form#new_message.new_message
+        .chat-footer__body
+          %textarea#message_body{rows: "1", name: "message[body]",  placeholder: "type a message"}
+          %label.chat-footer__image
+            %i.icon.fa.fa-image
+        %input{type: "submit", value: "send"}
