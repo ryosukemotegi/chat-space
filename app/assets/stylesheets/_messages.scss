@@ -19,6 +19,13 @@ h5 {
   color: white;
 }
 
+i.icon {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+}
+
 .chat {
   min-width: 980px;
   height: 100%;
@@ -44,24 +51,8 @@ h5 {
   &__action {
     font-size: 20px;
     color: $fontcolor;
-
-    i.icon {
-      display: inline-block;
-      font: normal normal normal 14px/1 FontAwesome;
-      font-size: inherit;
-      text-rendering: auto;
-    }
-
-    i.icon {
-      display: inline-block;
-      font: normal normal normal 14px/1 FontAwesome;
-      font-size: inherit;
-      text-rendering: auto;
-    }
   }
 }
-
-
 
 .chat-group {
   padding: 20px;
@@ -202,13 +193,6 @@ h5 {
         text-align: center;
         cursor: pointer;
       }
-
-        i.icon {
-          display: inline-block;
-          font: normal normal normal 14px/1 FontAwesome;
-          font-size: inherit;
-          text-rendering: auto;
-        }
   }
 
   input {
