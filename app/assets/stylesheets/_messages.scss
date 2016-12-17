@@ -1,17 +1,6 @@
-$notice: #38aef0;
-$fontcolor: #fff;
-
 html, body {
   height: 100%;
 }
-
-@mixin icon{
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-}
-
 
 p.notice {
   background-color: $notice;
@@ -47,23 +36,29 @@ h5 {
   height: 100px;
   width: 300px;
 
-    &__actions {
-          line-height: 60px;
-          padding: 20px;
-          float: right;
+  &__actions {
+    line-height: 60px;
+    padding: 20px;
+    float: right;
+  }
+  &__action {
+    font-size: 20px;
+    color: $fontcolor;
+
+    i.fa.fa-pencil-square-o {
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
     }
-    &__action {
-      font-size: 20px;
-      color: $fontcolor;
 
-          i.fa.fa-pencil-square-o {
-            @include icon
-              }
-
-          i.fa.fa-cog {
-            @include icon
-          }
-        }
+    i.fa.fa-cog {
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+    }
+  }
 }
 
 
@@ -72,12 +67,12 @@ h5 {
   padding: 20px;
   color: $fontcolor;
 
-   &__name {
+  &__name {
     font-size: 15px;
     margin-bottom: 5px;
   }
-    &__message {
-     font-size: 11px;
+  &__message {
+    font-size: 11px;
   }
 }
 
@@ -97,39 +92,38 @@ h5 {
   background-color: $fontcolor;
   border-bottom: 1px solid #eee;
 
-    &--left {
-      float: left;
+  &--left {
+    float: left;
 
-      h2 {
-        margin-top: 20px;
-        line-height: 50px;
-        letter-spacing: 2px;
-        color: #333;
-        font-size: 20px;
-        font-weight: 400;
-      }
-
-      .chat-header__users {
-        line-height: 20px;
-        color: #999;
-        font-size: 12px;
-      }
+    h2 {
+      margin-top: 20px;
+      line-height: 50px;
+      letter-spacing: 2px;
+      color: #333;
+      font-size: 20px;
+      font-weight: 400;
     }
 
-    &--right {
-      float: right;
-
-        a.chat-header__edit-btn {
-          display: inline-block;
-          margin: 28px 0;
-          padding-right: 20px;
-          padding-left: 20px;
-          line-height: 40px;
-          color: #38aef0;
-          font-size: 14px;
-          border: 2px solid;
-        }
+    .chat-header__users {
+      line-height: 20px;
+      color: #999;
+      font-size: 12px;
     }
+  }
+
+  &--right {
+    float: right;
+    a.chat-header__edit-btn {
+      display: inline-block;
+      margin: 28px 0;
+      padding-right: 20px;
+      padding-left: 20px;
+      line-height: 40px;
+      color: #38aef0;
+      font-size: 14px;
+      border: 2px solid;
+    }
+  }
 }
 
 .chat-body {
@@ -138,37 +132,37 @@ h5 {
   height: calc(100% - 190px);
   overflow-y: scroll;
 
-    ul.chat-messages {
-      position: absolute;
-      right: 40px;
-      left: 40px;
-      padding: 0;
-      list-style: none;
+  ul.chat-messages {
+    position: absolute;
+    right: 40px;
+    left: 40px;
+    padding: 0;
+    list-style: none;
 
-        li.chat-message {
-          margin-bottom: 40px;
-        }
+    li.chat-message {
+      margin-bottom: 40px;
+    }
 
-.chat-message__header {
-  line-height: 20px;
-}
+    .chat-message__header {
+      line-height: 20px;
+    }
 
-  p.chat-message__name {
-    float: left;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
+    p.chat-message__name {
+      float: left;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
 
-  p.chat-message__time {
-    padding: 5px;
-    float: left;
-    margin-left: 10px;
-    color: #aaa;
-    font-size: 12px;
-}
+    p.chat-message__time {
+      padding: 5px;
+      float: left;
+      margin-left: 10px;
+      color: #aaa;
+      font-size: 12px;
+    }
 
-   p.chat-message__body {
-    font-size: 14px;
+    p.chat-message__body {
+      font-size: 14px;
     }
   }
 }
@@ -195,7 +189,7 @@ h5 {
       border: none;
       resize: none;
       display: block;
-      }
+    }
 
       .chat-footer__image {
         position: absolute;
@@ -209,22 +203,25 @@ h5 {
         cursor: pointer;
       }
 
-          i.fa.fa-image {
-            @include icon
-          }
-    }
+        i.fa.fa-image {
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+        }
+  }
 
-    input {
-      float: left;
-      display: inline-block;
-      width: 100px;
-      margin-left: 15px;
-      line-height: 50px;
-      color: $fontcolor;
-      background-color: #38aef0;
-      text-align: center;
-      border: none;
-      padding: 0;
+  input {
+    float: left;
+    display: inline-block;
+    width: 100px;
+    margin-left: 15px;
+    line-height: 50px;
+    color: $fontcolor;
+    background-color: #38aef0;
+    text-align: center;
+    border: none;
+    padding: 0;
   }
 }
 
