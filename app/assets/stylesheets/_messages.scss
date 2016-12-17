@@ -45,14 +45,14 @@ h5 {
     font-size: 20px;
     color: $fontcolor;
 
-    i.fa.fa-pencil-square-o {
+    i.icon {
       display: inline-block;
       font: normal normal normal 14px/1 FontAwesome;
       font-size: inherit;
       text-rendering: auto;
     }
 
-    i.fa.fa-cog {
+    i.icon {
       display: inline-block;
       font: normal normal normal 14px/1 FontAwesome;
       font-size: inherit;
@@ -203,7 +203,7 @@ h5 {
         cursor: pointer;
       }
 
-        i.fa.fa-image {
+        i.icon {
           display: inline-block;
           font: normal normal normal 14px/1 FontAwesome;
           font-size: inherit;
