@@ -3,6 +3,7 @@ $lightgray: #ddd;
 $silver: #ccc;
 $blue: #38aef0;
 $field-color: #d65f4c;
+$font:#434a54;
 
 @mixin clearfix {
     clear: both;
@@ -12,7 +13,7 @@ $field-color: #d65f4c;
 
 .account-page {
   .account-page__inner {
-    width: 980px;
+    width: 858px;
     margin: 60px auto;
     padding: 60px;
     background-color: $white;
@@ -48,6 +49,7 @@ $field-color: #d65f4c;
       margin-bottom: 20px;
       font-size: 14px;
       font-weight: 200;
+      color: $font;
     }
 
     .btn {
