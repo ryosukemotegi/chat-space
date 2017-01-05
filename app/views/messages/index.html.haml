@@ -1,7 +1,7 @@
 .chat.clearfix
   .chat-side
     .chat-user.clearfix
-      %h5 ユーザー名
+      %h5=current_user.name
       .chat-user__actions
         = link_to new_group_path, class: "chat-user__action" do
           %i.icon.fa.fa-pencil-square-o
@@ -9,7 +9,7 @@
           %i.icon.fa.fa-cog
     %ul.chat-groups
       %li.chat-group
-        %p.chat-group__name グループ名
+        %p.chat-group__name
         %p.chat-group__message こんにちは
   .chat-main
     .chat-header.clearfix
