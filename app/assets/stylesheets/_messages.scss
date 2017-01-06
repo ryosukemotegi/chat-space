@@ -93,6 +93,7 @@ i.icon {
 
   &--left {
     float: left;
+  }
 
     h2 {
       margin-top: 20px;
@@ -103,16 +104,16 @@ i.icon {
       font-weight: 400;
     }
 
-    .chat-header__users {
+  &__users {
       line-height: 20px;
       color: #999;
       font-size: 12px;
     }
-  }
 
   &--right {
     float: right;
-     .chat-header__edit-btn {
+  }
+  &__edit-btn {
       display: inline-block;
       margin: 28px 0;
       padding-right: 20px;
@@ -121,7 +122,6 @@ i.icon {
       color: #38aef0;
       font-size: 14px;
       border: 2px solid;
-    }
   }
 }
 
