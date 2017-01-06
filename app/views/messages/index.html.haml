@@ -8,7 +8,7 @@
         %p.chat-header__users
           Members:
           -@group.users.each do |user|
-            %span.chat-header__user=user.name
+            %span.chat-header__user= user.name
       .chat-header--right
         = link_to edit_group_path(params[:group_id]) do
           .chat-header__edit-btn Edit
@@ -23,7 +23,7 @@
     .chat-footer
       %form#new_message.new_message
         .chat-footer__body
-          %textarea#message_body{rows: "1", name: "message[body]",  placeholder: "type a message"}
+          %textarea#message_body{ rows: "1", name: "message[body]",  placeholder: "type a message" }
           %label.chat-footer__image
             %i.icon.fa.fa-image
-        %input{type: "submit", value: "send"}
+        %input{ type: "submit", value: "send" }
