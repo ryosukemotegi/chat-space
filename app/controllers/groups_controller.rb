@@ -22,7 +22,7 @@ class GroupsController < ApplicationController
 
   def update
     @group.update(group_params)
-    redirect_to group_messages_path(@group),notice:"チャットグループが編集されました"
+    redirect_to group_messages_path(@group), notice: "チャットグループが編集されました"
   end
 
   private

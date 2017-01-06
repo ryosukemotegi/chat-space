@@ -17,8 +17,8 @@
   .chat-main
     .chat-header.clearfix
       .chat-header--left
-        %h2=@group.name
-        %p.chat-header__users<>
+        %h2= @group.name
+        %p.chat-header__users
           Members:
           -@group.users.each do |user|
             %span.chat-header__user=user.name
