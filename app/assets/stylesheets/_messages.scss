@@ -213,6 +213,9 @@ i.icon {
     text-align: center;
     border: none;
     padding: 0;
+    &.file_attach{
+      display: none;
+    }
   }
 }
 
