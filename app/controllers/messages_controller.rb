@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
     @groups = current_user.groups
     @message = Message.new
     @messages = Message.includes(:user).where(group_id:params[:group_id])
-  ends
+  end
 
   def create
     @message = Message.create(message_params)
