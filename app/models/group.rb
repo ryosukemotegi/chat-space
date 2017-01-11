@@ -6,10 +6,6 @@ class Group < ApplicationRecord
   validates :name, presence: true
 
   def view_message
-    if messages.present?
-      messages.last.body
-    else
-      "メッセージがありません"
-    end
+    messages.present? ? messages.last.body : "メッセージがありません"
   end
 end
