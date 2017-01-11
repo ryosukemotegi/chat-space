@@ -18,7 +18,7 @@
         =render @messages
 
     .chat-footer
-      =form_for [@group, @message], class:"new_message" do |f|
+      =form_for [@group, @message] do |f|
         .chat-footer__body
           =f.text_area :body, placeholder: "type a message", rows: "1", id:"message_body"
           %label.chat-footer__image
