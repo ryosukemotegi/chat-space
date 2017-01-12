@@ -1,20 +1,20 @@
 class MessagesController < ApplicationController
   before_action :set_group , only: %i(index create)
+  before_action :set_message , only: %i(index create)
 
   def index
-    @groups = current_user.groups
     @message = current_user.messages.new
-    @messages = @group.messages.includes(:user)
   end
 
   def create
     @message = current_user.messages.new(message_params)
     if @message.save
-      flash[:notice] = "メッセージを投稿しました。"
+      redirect_to group_messages_path(@group), notice: "メッセージを投稿しました。"
     else
-      flash[:alert] = "メッセージを入力してください。"
+      flash.now[:alert] = "メッセージを入力してください。"
+      render "index"
     end
-    redirect_to group_messages_path(@group)
+
   end
 
   private
@@ -24,5 +24,11 @@ class MessagesController < ApplicationController
 
   def set_group
     @group =  Group.find(params[:group_id])
+    @groups = current_user.groups
   end
+
+  def set_message
+    @messages = @group.messages.includes(:user)
+  end
+
 end
