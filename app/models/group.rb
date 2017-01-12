@@ -5,7 +5,7 @@ class Group < ApplicationRecord
   accepts_nested_attributes_for :user_groups
   validates :name, presence: true
 
-  def view_message
+  def last_message
     messages.present? ? messages.last.body : 'メッセージがありません'
   end
 end
