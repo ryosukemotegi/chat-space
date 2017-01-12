@@ -15,15 +15,13 @@
 
     .chat-body
       %ul.chat-messages
-        %li.chat-message
-          .chat-mssage__header.clearfix
-            %p.chat-message__name ユーザー1
-            %p.chat-message__time 2016/12/17
-          %p.chat-message__body Hello Work
+        =render @messages
+
     .chat-footer
-      %form#new_message.new_message
+      = form_for [@group, @message] do |f|
         .chat-footer__body
-          %textarea#message_body{ rows: "1", name: "message[body]",  placeholder: "type a message" }
+          = f.text_area :body, placeholder: "type a message", rows: "1", id: "message_body"
           %label.chat-footer__image
-            %i.icon.fa.fa-image
-        %input{ type: "submit", value: "send" }
+            = f.file_field :image, class: "file_attach"
+            %i.fa.fa-image
+        = f.submit "SEND"
