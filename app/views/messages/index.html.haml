@@ -18,10 +18,10 @@
         =render @messages
 
     .chat-footer
-      =form_for [@group, @message] do |f|
+      = form_for [@group, @message] do |f|
         .chat-footer__body
-          =f.text_area :body, placeholder: "type a message", rows: "1", id:"message_body"
+          = f.text_area :body, placeholder: "type a message", rows: "1", id: "message_body"
           %label.chat-footer__image
-            =f.file_field :image, class: "file_attach"
+            = f.file_field :image, class: "file_attach"
             %i.fa.fa-image
         = f.submit "SEND"
