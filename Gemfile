@@ -52,3 +52,10 @@ gem 'font-awesome-sass'
 gem 'devise'
 gem 'devise-i18n'
 gem 'pry-rails'
+gem 'rspec-rails', '~>3.5'
+gem 'factory_girl_rails', "~> 4.4.1"
+gem 'rails-controller-testing'
+
+group :test do
+  gem 'faker'
+end
