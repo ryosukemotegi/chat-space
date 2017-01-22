@@ -11,9 +11,6 @@ describe MessagesController do
   before do
     sign_in user
   end
-  after do
-    sign_out user
-  end
 
   describe 'GET #index' do
     it "assigns the requested contact to @groups" do
