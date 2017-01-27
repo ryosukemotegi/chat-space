@@ -4,12 +4,19 @@ class MessagesController < ApplicationController
 
   def index
     @message = current_user.messages.new
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @messages.to_json }
+    end
   end
 
   def create
     @message = current_user.messages.new(message_params)
     if @message.save
-      redirect_to group_messages_path(@group), notice: "メッセージを投稿しました。"
+      respond_to do |format|
+        format.html { redirect_to group_messages_path(@group), notice: "メッセージを投稿しました。" }
+        format.json { render json: @message.to_json }
+      end
     else
       flash.now[:alert] = "メッセージを入力してください。"
       render "index"
