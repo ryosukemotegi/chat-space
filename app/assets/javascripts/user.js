@@ -3,11 +3,10 @@ $(function(){
   var preFunc;
   //ユーザーの検索リスト作成
   function buildUserList(users) {
-    
-    $(".chat-group-user").remove();
+    $(".reset-search-list").remove();
     var html = "";
     $.each(users, function(index, user) {
-      html += '<div class="chat-group-user clearfix">' +
+      html += '<div class="chat-group-user reset-search-list clearfix">' +
       '<p class="chat-group-user__name">' + user.name + '</p>' +
       '<a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="' + user.id + '"data-user-name="' + user.name + '">追加</a></div>';
     });
