@@ -24,6 +24,8 @@
           .chat-group-user.clearfix
             %p.chat-group-user__name
               = current_user.name
+              #chat-group-user.chat-group-user.remove-from-list.clearfix
+              = f.hidden_field :user_ids, value: current_user.id, multiple: true
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
