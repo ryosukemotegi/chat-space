@@ -1,3 +1,31 @@
 .chat-group-form
   %h1 チャットグループ編集
-  =render partial:"form"
+  = form_for @group, html: { id: "new_chat_group", class: "new_chat_group" } do |f|
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        = f.label :name,"グループ名", class: "chat-group-form__label"
+      .chat-group-form__field--right
+        = f.text_field:name,placeholder:"グループ名を入力してください", id: "chat_group_name",class: "chat-group-form__input"
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        = f.label :name, "チャットメンバーを追加", class: "chat-group-form__label"
+      .chat-group-form__field--right
+        .chat-group-form__search.clearfix
+          %input.chat-group-form__input#user-search-field{ placeholder: "追加したいユーザー名を入力してください", type: "text" }
+        #user-search-result
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        = f.label :name,"チャットメンバー", class: "chat-group-form__label"
+      .chat-group-form__field--right
+        #chat-group-users
+          .login-user-name.clearfix
+            %p.chat-group-user__name
+              = current_user.name
+          -@group.users.each do |user|
+            .chat-group-user.clearfix
+              %p.chat-group-user__name=user.name
+              .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.data-user-id="削除"
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+      .chat-group-form__field--right
+        = f.submit "Save", class: "chat-group-form__action-btn", data:{ disable_with: "Save" }
