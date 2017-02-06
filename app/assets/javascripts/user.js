@@ -24,7 +24,7 @@ $(function(){
     return html;
   }
   //インクリメンタルサーチ
-  $(document).on('keyup', '#user-search-field',function(){
+  $(document).on('keyup', '#user-search-field', function(){
 
     var name = $(this).val();
     var ajaxSearch = function(){
