@@ -38,6 +38,9 @@ $(function(){
         var html = buildUserList(data);
         $('#user-search-result').append(html);
       })
+      .fail(function() {
+        alert("error!!!");
+      });
     };
     if(name != preName && name.length !== 0){
       clearTimeout(preFunc);
