@@ -6,7 +6,18 @@ class MessagesController < ApplicationController
     @message = current_user.messages.new
     respond_to do |format|
       format.html { render :index }
-      format.json { render json: @messages.to_json }
+      format.json {
+        messageArray = []
+        @messages.each do |message|
+          messageArray << {
+            body: message.body,
+            name: message.user.name,
+            image: message.image.url,
+            created_at: message.created_at.strftime("%Y/%m/%d %H:%M:%S")
+          }
+        end
+        render json: { message: messageArray }
+      }
     end
   end
 
@@ -15,7 +26,13 @@ class MessagesController < ApplicationController
     if @message.save
       respond_to do |format|
         format.html { redirect_to group_messages_path(@group), notice: "メッセージを投稿しました。" }
-        format.json { render json: @message.to_json }
+        format.json { render json: {
+              body: @message.body,
+              name: @message.user.name,
+              image: @message.image.url,
+              created_at: @message.created_at.strftime("%Y/%m/%d %H:%M:%S")
+            }
+          }
       end
     else
       flash.now[:alert] = "メッセージを入力してください。"

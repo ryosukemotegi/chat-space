@@ -6,3 +6,6 @@
       = l message.created_at, format: :default
   %p.chat-message__body
     = message.body
+    - if message.image.present?
+      %br
+      = image_tag(message.image)
