@@ -1,12 +1,14 @@
 $(function() {
-  //
   function buildHTML(message) {
     var html = '<div class="chat-message__header clearfix">' +
     '<p class="chat-message__name">' + message.name +
     '<p class="chat-message__time">' + message.created_at +
     '</div>' +
-    '<p class="chat-message__body">' + message.body +
-    '<br><img src="' + message.image + '">';
+    '<p class="chat-message__body">' + message.body;
+
+    if(message.image){
+      html += '<br><img src="' + message.image + '">';
+    }
     return html;
   }
 

@@ -57,6 +57,9 @@ gem 'factory_girl_rails', "~> 4.4.1"
 gem 'rails-controller-testing'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'dotenv-rails'
+gem 'config'
+gem 'fog'
 
 group :test do
   gem 'faker'
