@@ -33,7 +33,7 @@ $('#new_message').on('submit',function(e) {
     });
   });
 // message.indexを表示する
-var pageupdate = function(){
+function pageupdate(){
   var currentUrl = document.location.pathname
   var messagesIndex = new RegExp(/\/groups\/\d+\/messages/)
     //もし今いるページがgroups/group_id/messages(messages.index)だったら
@@ -51,8 +51,6 @@ var pageupdate = function(){
       //メッセージ数(.chat-messageの要素数)をカウント
       var messagesCount = $('.chat-message').length;
       var dataLength = data.message.length;
-      console.log(messagesCount);
-      console.log(dataLength);
       // 追加されたメッセージ(現在のメッセージ数よりも多い部分)を表示
       for (var i = messagesCount; i < dataLength; i = i + 1) {
         var html = buildHTML(data.message[i]);
